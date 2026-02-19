@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NIS2 Exposure Assessment Protocol - Governance maturity and board liability framework for Belgian enterprises">
+    <title>NIS2 Exposure Assessment Protocol | Homieux Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="https://homieuxmedia.com" target="_blank" rel="noopener noreferrer" class="logo-link">
+                <img src="logo-homieux.png" alt="Homieux Media Logo - Return to homepage" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="hero">
+                <h1 class="hero-title">NIS2 Exposure Assessment Protocol</h1>
+                <p class="hero-subtitle">Governance maturity and board liability framework for Belgian enterprises</p>
+                <p class="hero-context">Assess your exposure to NIS2 Directive obligations and evaluate governance readiness for managing partners and board members.</p>
+            </div>
+
+            <div class="assessment-container">
+                <!-- Step 1: Entity Size -->
+                <div class="step active" id="step-1">
+                    <div class="step-header">
+                        <span class="step-number">1</span>
+                        <h2 class="step-title">Organizational Scale</h2>
+                    </div>
+                    <p class="step-description">The NIS2 Directive establishes differentiated obligations based on entity classification and economic thresholds.</p>
+                    
+                    <div class="options-grid">
+                        <button class="option-card" data-value="large" onclick="selectOption(1, 'large')">
+                            <div class="option-icon">🏢</div>
+                            <h3>Large Enterprise</h3>
+                            <p>250+ employees or turnover > €50M / balance sheet > €43M</p>
+                            <span class="option-tag">Enhanced obligations</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="medium" onclick="selectOption(1, 'medium')">
+                            <div class="option-icon">🏛️</div>
+                            <h3>Medium Enterprise</h3>
+                            <p>50-249 employees or turnover €10-50M</p>
+                            <span class="option-tag">Important obligations</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="small" onclick="selectOption(1, 'small')">
+                            <div class="option-icon">🏘️</div>
+                            <h3>Small Organization</h3>
+                            <p>&lt; 50 employees and turnover &lt; €10M</p>
+                            <span class="option-tag">Limited exposure</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Service Sensitivity -->
+                <div class="step" id="step-2">
+                    <div class="step-header">
+                        <span class="step-number">2</span>
+                        <h2 class="step-title">Service Criticality</h2>
+                    </div>
+                    <p class="step-description">Certain professional services present elevated systemic risk under NIS2 Directive Annex III classification.</p>
+                    
+                    <div class="options-grid">
+                        <button class="option-card" data-value="high" onclick="selectOption(2, 'high')">
+                            <div class="option-icon">⚖️</div>
+                            <h3>Legal Practice / Notary</h3>
+                            <p>Sensitive legal data, professional privilege, critical client information</p>
+                            <span class="option-tag">High risk</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="high" onclick="selectOption(2, 'high')">
+                            <div class="option-icon">📊</div>
+                            <h3>Accounting / Statutory Audit</h3>
+                            <p> Sensitive financial data, regulatory reporting, tax information</p>
+                            <span class="option-tag">High risk</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="medium" onclick="selectOption(2, 'medium')">
+                            <div class="option-icon">🏢</div>
+                            <h3>Management Consulting</h3>
+                            <p>Strategic client data, sensitive commercial intelligence</p>
+                            <span class="option-tag">Medium risk</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="standard" onclick="selectOption(2, 'standard')">
+                            <div class="option-icon">🔧</div>
+                            <h3>Other Professional Services</h3>
+                            <p>Business support without critical data exposure</p>
+                            <span class="option-tag">Standard risk</span>
+                        </button>
+                    </div>
+                    
+                    <button class="btn-back" onclick="goBack(2)">← Back</button>
+                </div>
+
+                <!-- Step 3: Digital Infrastructure -->
+                <div class="step" id="step-3">
+                    <div class="step-header">
+                        <span class="step-number">3</span>
+                        <h2 class="step-title">Digital Infrastructure Posture</h2>
+                    </div>
+                    <p class="step-description">Evaluate technical exposure and incident response capabilities against NIS2 requirements.</p>
+                    
+                    <div class="options-list">
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="cloud-infra" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Cloud infrastructure dependency (SaaS, PaaS, IaaS)</strong>
+                                    <span>Data hosted with third-party providers (Microsoft 365, Google Workspace, AWS, etc.)</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="mfa-enabled" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Multi-factor authentication (MFA) deployed</strong>
+                                    <span>Protection of privileged access and sensitive data repositories</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="incident-process" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Established incident reporting procedure</strong>
+                                    <span>Documented process for notifying Centre for Cybersecurity Belgium (CCB) within 24 hours</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="supply-chain" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Critical IT providers in value chain</strong>
+                                    <span>Dependency on essential technology suppliers</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="step-actions">
+                        <button class="btn-back" onclick="goBack(3)">← Back</button>
+                        <button class="btn-primary" onclick="validateStep3()">Continue →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Governance Maturity -->
+                <div class="step" id="step-4">
+                    <div class="step-header">
+                        <span class="step-number">4</span>
+                        <h2 class="step-title">Governance Maturity Level</h2>
+                    </div>
+                    <p class="step-description">Board-level cybersecurity governance structure directly impacts compliance obligations and liability exposure.</p>
+                    
+                    <div class="options-grid">
+                        <button class="option-card" data-value="none" onclick="selectOption(4, 'none')">
+                            <div class="option-icon">⚠️</div>
+                            <h3>No Formal Structure</h3>
+                            <p>No designated cyber responsibility, no documented security policies</p>
+                            <span class="option-tag risk">Major risk</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="basic" onclick="selectOption(4, 'basic')">
+                            <div class="option-icon">📋</div>
+                            <h3>Basic Governance</h3>
+                            <p>Identified IT responsibility, initial security policies, ad hoc awareness</p>
+                            <span class="option-tag">Developing</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="structured" onclick="selectOption(4, 'structured')">
+                            <div class="option-icon">🛡️</div>
+                            <h3>Structured Governance</h3>
+                            <p>Designated CISO, formalized policies, regular audits, board reporting</p>
+                            <span class="option-tag">Advanced compliance</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="iso" onclick="selectOption(4, 'iso')">
+                            <div class="option-icon">✓</div>
+                            <h3>ISO 27001 Certified</h3>
+                            <p>Certified ISMS, third-party audits, regular management review</p>
+                            <span class="option-tag success">Excellence</span>
+                        </button>
+                    </div>
+                    
+                    <button class="btn-back" onclick="goBack(4)">← Back</button>
+                </div>
+
+                <!-- Step 5: Results -->
+                <div class="step" id="step-5">
+                    <div class="result-container">
+                        <div class="result-header">
+                            <h2 class="result-title">Your NIS2 Exposure Classification</h2>
+                            <div class="tier-badge" id="tier-badge">Calculating...</div>
+                        </div>
+                        
+                        <div class="result-content" id="result-content">
+                            <!-- Dynamic content inserted here -->
+                        </div>
+                        
+                        <div class="result-actions">
+                            <a href="https://cal.com/homieux-media/strategic-discovery-call-let-s-discuss-your-business-challenges" target="_blank" rel="noopener noreferrer" class="btn-cta">
+                                Schedule a 15-minute Strategic Discovery Call
+                            </a>
+                            <button class="btn-secondary" onclick="restartAssessment()">New Assessment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Regulatory Framework</h3>
+                <p>This assessment tool is based on <strong>Directive (EU) 2022/2555 (NIS2)</strong>, transposed into Belgian law by the <strong>Law of 7 April 2024</strong> on cybersecurity measures. Evaluation criteria reflect obligations for Important and Essential Entities as defined by the Centre for Cybersecurity Belgium (CCB).</p>
+                <p class="disclaimer">This assessment provides strategic orientation and does not constitute formal legal compliance audit or legal advice.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="copyright">© 2026 Homieux Media</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.homieuxmedia.com/en/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                    <span class="separator">|</span>
+                    <a href="https://www.homieuxmedia.com/en/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
